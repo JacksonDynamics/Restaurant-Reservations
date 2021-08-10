@@ -1,4 +1,4 @@
-exports.up = function (knex) {
+exports.up = async function (knex) {
   return knex.schema.createTable('reservations', (table) => {
     table.increments('reservation_id').primary();
     table.string('first_name').notNullable();
@@ -11,6 +11,6 @@ exports.up = function (knex) {
   });
 };
 
-exports.down = function (knex) {
+exports.down = async function (knex) {
   return knex.schema.dropTable('reservations');
 };
