@@ -29,10 +29,11 @@ function TableSeating() {
     loadTables();
   }, [reservation_id]);
 
-  let freeTables = tables.filter(
-    (table) =>
-      table.reservation_id === null && table.capacity >= reservation.people
-  );
+  // let freeTables = tables.filter(
+  //   (table) =>
+  //     table.reservation_id === null && table.capacity >= reservation.people
+  // );
+  let freeTables = tables
   let list = freeTables.map((table) => {
     return (
       <option key={table.table_id} value={table.table_id}>
